@@ -65,7 +65,7 @@ while read line; do
   do
     byte=$(xxd -p -l1 -s $(($loc + 10 + $i)) $filename)
     echo -n "$byte "
-    repIndex=$((16#$byte + 1))
+    repIndex=$((16#$byte))
     changeTo=${replacements[$repIndex]}
     # echo $changeTo
     printf "\x$(printf %x $changeTo)" >> $resFile
