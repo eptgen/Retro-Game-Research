@@ -2,7 +2,7 @@ function memChange(address, value)
 
     gui.text(0,10,"memory changed");
     gui.text(100,10,address);
-    gui.text(200,10,value);
+    gui.text(150,10,value);
 
     -- memory.read
 
@@ -17,5 +17,3 @@ while (true) do
        emu.frameadvance();
 
 end;
-
-
