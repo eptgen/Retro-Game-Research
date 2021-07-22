@@ -1,6 +1,9 @@
 # Changes NES palette colors (to greyscale).
 
-from getBytes import getFileHexList
+import sys
+import os
+from getBytes import getFileHexList, int2hex
+
 SKIP_SUS = True
 # Dictionary for converting to greyscale.
 greyscale = {
@@ -196,7 +199,9 @@ if __name__ == "__main__":
     convertPaletteGrey(hexList, blocks)
 
     # Write the modified hex list to a new file.
-    greyFileName = "grey_" + fileName
+    # Start by splitting the original filename into path and file parts.
+    pathPart, filePart = os.path.split(fileName)
+    greyFileName = "grey_" + filePart   # pathPart + "grey_" + filePart
     writeHexListFile(hexList, greyFileName)
 
 
