@@ -4,7 +4,7 @@ import sys
 import os
 from getBytes import getFileHexList, int2hex
 
-SKIP_SUS = True
+SKIP_SUS = False
 # Dictionary for converting to greyscale.
 greyscale = {
             "0f":"0f",
